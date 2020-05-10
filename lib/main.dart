@@ -72,16 +72,56 @@ class HomeScreen extends StatelessWidget {
           width: double.infinity,
           height: 60,
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(25),
-            border: Border.all(
-              color: Color(0xFFE5E5E5),
-            )
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(
+                color: Color(0xFFE5E5E5),
+              )),
+          child: Row(
+            children: <Widget>[
+              SvgPicture.asset("assets/icons/maps-and-flags.svg"),
+              SizedBox(
+                width: 20,
+              ),
+              Expanded(
+                  child: DropdownButton(
+                isExpanded: true,
+                underline: SizedBox(),
+                value: 'Indonesia',
+                items: ['Indonesia', 'Bangladesh', 'United States', 'Japan']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (value) {},
+              ))
+            ],
           ),
-          child: Row(children: <Widget>[
-            SvgPicture.asset("assets/icons/maps-and-flags.svg"),
-            Expanded(child: DropdownButton(items: <DropdownMenuItem>[],))
-          ],),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  RichText(
+                      text: TextSpan(
+                    children: [
+                      TextSpan(text: "Case Update\n", style: kTitleTextstyle),
+                      TextSpan(
+                          text: "Newest update March 28",
+                          style: TextStyle(color: kTextLightColor)),
+                    ],
+                  ))
+                ],
+              )
+            ],
+          ),
         )
       ]),
     );
