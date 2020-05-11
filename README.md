@@ -14,3 +14,12 @@ DropdownButton
 #### 참고
 
 - https://api.flutter.dev/flutter/material/DropdownButton-class.html
+
+## 20200511
+
+BoxShadow  
+Container를 둥글게 하여 그림자 효과를 줌
+
+#### 참고
+
+- https://api.flutter.dev/flutter/painting/BoxShadow-class.html

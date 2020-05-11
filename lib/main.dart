@@ -117,9 +117,31 @@ class HomeScreen extends StatelessWidget {
                           text: "Newest update March 28",
                           style: TextStyle(color: kTextLightColor)),
                     ],
-                  ))
+                  )),
+                  Spacer(),
+                  Text(
+                    'See details',
+                    style: TextStyle(
+                        color: kPrimaryColor, fontWeight: FontWeight.w600),
+                  )
                 ],
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(0, 4),
+                        blurRadius: 30,
+                        color: kShadowColor)
+                  ],
+                ),
+              ),
             ],
           ),
         )
