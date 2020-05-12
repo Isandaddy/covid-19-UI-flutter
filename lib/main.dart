@@ -141,11 +141,78 @@ class HomeScreen extends StatelessWidget {
                         color: kShadowColor)
                   ],
                 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Counter(
+                      color: kInfectedColor,
+                      number: 1046,
+                      title: "Infected",
+                    ),
+                    Counter(
+                      color: kDeathColor,
+                      number: 88,
+                      title: "Deaths",
+                    ),
+                    Counter(
+                      color: kRecovercolor,
+                      number: 46,
+                      title: "Recovered",
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
         )
       ]),
+    );
+  }
+}
+
+class Counter extends StatelessWidget {
+  final int number;
+  final Color color;
+  final String title;
+  const Counter({
+    Key key,
+    this.number,
+    this.color,
+    this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(6),
+          height: 25,
+          width: 25,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: kInfectedColor.withOpacity(.25),
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.transparent,
+              border: Border.all(color: color, width: 2),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          "$number",
+          style: TextStyle(fontSize: 40, color: color),
+        ),
+        Text(
+          title,
+          style: TextStyle(color: color),
+        )
+      ],
     );
   }
 }

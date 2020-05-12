@@ -23,3 +23,7 @@ Container를 둥글게 하여 그림자 효과를 줌
 #### 참고
 
 - https://api.flutter.dev/flutter/painting/BoxShadow-class.html
+
+## 20200512
+
+Counter Widget 만들어서 사용
